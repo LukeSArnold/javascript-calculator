@@ -1,8 +1,8 @@
-Dear grader,
+JAVASCRIPT CALCULATOR
+==========================
 
-How many people actually end up leaving messages in the README pages? Because I've never actually done it and I've been taking
-classes with Erik for a while. If you do actually read this you should give me a cubmission comment answer my question.
-
-Love you!
-
-- Luke Arnold
+OVERVIEW
+-------------------------
+This program was created for CS-2610, the web development class at Utah State Unversity.
+This program is a simple calculator application, it features a main index page as well as an associated script page. 
+The program takes in two values, and allows a user to select an operator. Then the program prints out the result of the calculation. 
