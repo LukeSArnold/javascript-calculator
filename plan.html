@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<title>Plan</title>
+	</head>
+	<body>
+		<div>
+			<h1> Phase 0: Requirements Specification </h1>
+			<p>
+				The purpose of this assignment is to gain familiarity with the standard uses and syntax <br>
+				of JavaScript. Since JavaScript is a slightly unconventional language there is expected <br>
+				to be some problem that will be faced while completing this assignment. <br>
+				Additionally, another purpose for this assignment is to gain familiarity with dynmically creating
+				html elements using JavaScript. While in a standard application you will never have to 
+				allocate elements at runtime, this serves as good practice <br>
+				<br>
+				I already know a good amount about HTML before starting this assignment, though I know next <br>
+				to nothing about JavaScript. I keep being told that it can't be treated like a norma <br>
+				object oriented programming language and I'm a big nervous to figure out why it is so odd. <br>
+			</p>
+		</div>
+		
+		<div>
+			<h1> Phase 1: System Analysis </h1>
+			<p>
+				The program won't have much initial data coming in. Before runtime, the only thing that really <br>
+				exists in the program is the static html file. This file does nothing else except running a <br>
+				JavaScript program that will be embedded into the html. <br>
+				However, there will be a good amount of user input. <br>
+				The user will be able to insert two numbers, choose an operator (from a predetermined dropdown menu) <br>
+				choose colors from a color element, and lastly they will be able to "click" and remove div elements <br>
+			</p>
+		</div>
+		<div>
+			<h1> Phase 2: Design </h1>
+			<p>
+			<pre>
+			Function deleteDiv(div){
+			div.remove();
+					}
+
+				Function calculate(){
+					val1 = input1.textContent;
+					val2 = input2.textContent;
+					operator = menu.content;
+					result = eval(""+val1 + operator + val2 + "");
+					color = color.content;
+					newDiv = document.createChild('div");
+
+					h1 = document.createChild('h1')
+					text = coument.createChild('text')
+					
+					h1.textContent = result
+					text.textContent = val1 + operator + val2
+
+					newDiv.appendChild(#what we just defined)
+
+					newDiv.onclick = deleteDiv(self);
+
+
+				}
+				document = Document();
+
+				header = document.createChild('div';)
+				h1Tag = document.createChild('h1');
+				input1 = document.createChild('input');
+				input2 = document.createChild('input');
+				color = document.createChild('color');
+				menu = document.createChild('menu');
+				button = document.createChild('button');
+
+				#assign different attributes to the different elements 
+				header.textContent = "javascript calculator")
+				menu.content = #array containing different options
+
+				#apply different elements to where they appear
+
+				div.appendChild(menu, button, color, input1, etc.)
+				document.appendChild(div)
+
+				button.onclick = calculate();
+			</pre>
+			</p>
+		</div>
+		<div>
+			<h1> Phase 3: Implementation </h1>
+			<p>
+			<pre>
+			function calculate(){
+
+        let color = document.getElementById('colorSelector').value
+        let newDiv = document.createElement('div');
+        newDiv.setAttribute('class','stuff-box')
+        newDiv.setAttribute('style','background-color: '+color);
+        document.body.appendChild(newDiv);
+
+
+
+        let oldDiv = document.getElementById('mainDiv')
+        let inputOneText = document.getElementById('input1').value
+        let inputTwoText = document.getElementById('input2').value
+        let operator = document.getElementById('dropDown').value
+        console.log("Input one has the text "+inputOneText);
+        console.log("Input two has the text "+inputTwoText);
+        console.log("operator has the text "+operator);
+
+
+        input1 = parseFloat(inputOneText);
+        input2 = parseFloat(inputTwoText);
+
+        if (isNaN(input1) || isNaN(input2)){
+                let h2 = document.createElement('h2')
+                let dateTime = document.createElement('p');
+
+                dateTime.textContent = new Date().toString();
+                h2.textContent = "ERROR: ONE OR TWO INPUTS WERE INVALID"
+
+
+
+                newDiv.setAttribute('style','background-color: red');
+                newDiv.appendChild(h2);
+                newDiv.appendChild(dateTime);
+                newDiv.onclick = function(){
+                        newDiv.remove();
+                }
+
+        } else {
+                let h2 = document.createElement('h2');
+                let dateTime = document.createElement('p');
+
+                result = eval(""+inputOneText+""+operator+""+inputTwoText);
+
+                dateTime.textContent = new Date().toString();
+                h2.textContent = inputOneText + operator + inputTwoText + " = " +result;
+
+                newDiv.appendChild(h2);
+                newDiv.appendChild(dateTime);
+                newDiv.onclick = function(){
+                        newDiv.remove();
+                }
+        }
+}
+
+	var document = new Document();
+	document.title = "JavaScript Calculator";
+	let div = document.createElement('div');
+	div.setAttribute('class','stuff-box');
+	div.setAttribute('style','background-color: #000000');
+	div.setAttribute('id','mainDiv');
+	document.body.appendChild(div);
+
+	let h2 = document.createElement('h2');
+	let input1 = document.createElement('input');
+	let input2 = document.createElement('input');
+	let dropDown = document.createElement('select');
+	let calcButton = document.createElement('button')
+	let colorSelector = document.createElement('input');
+			</pre>
+			</p>
+		</div>
+		<div>
+			<h1> Phase 4: Testing & Debugging </h1>
+			<p> 
+			<pre>
+				Luckily enough in this assignment I didn't really run into many errors.
+				The most of what happened pretty much just consisted of leaving on the parenthesis
+				when declaring the function for onclick listeners. I didn't realize that if you left
+				the paranthesis on then it would automatically call that function regardless of whether
+				you actually clicked it or not. Why that was the case, I do not know.
+
+				But other than that I didn't really have any other bugs. I made a few syntax mistakes that I 
+				since fixed, but everyting worked out okay. I feel like javascript was made out to be worse
+				than it is, but idk. 
+
+				</pre>
+			</p>
+		</div>
+		<div>
+			<h1> Phase 5: Deployment </h1>
+			<p>
+			Code pushed and submitted to gitlab
+			</p>
+		</div>
+		<div>
+			<h1> Maintenance </h1>
+			<p>
+			<pre>
+				I think most all parts of my program are written pretty well (or as well as I can gauge).
+				The only thing I would consider changing in the future is changing my default ".onclick" 
+				attributes with an actual eventListener. But other than that I think everyting was pretty clean.
+
+				I understand how all parts of my program work. The overall process was pretty simple I think. It 
+				was just a matter of creating the html elements, connecting a few attributes to them, and then 
+				formatting them on the page. Overall I think I understood it pretty well.
+
+				If a bug is reported in a few months it would be pretty easy to find the cause, this is just
+				because the program is pretty small and simple in execution. 
+
+				My code is pretty clear and I think anyone with a programming background could understand it. 
+
+				It would be very easy to add in a new feature, because the current working of the program are
+				simple and isolated, so anything could be thrown in without disrupting the current processes. 
+
+				The program should continue working unless JavaScript has some very sudden and strange changes, 
+				or webbrowsers stop working in the same way.
+			</pre>
+			</p>
+		</div>	
+	</body>
+</html>
+
+
+
+
+
